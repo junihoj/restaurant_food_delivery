@@ -27,6 +27,24 @@
       "compilerOptions": {
         "tsConfigPath": "apps/users/tsconfig.app.json"
       }
+    },
+    "api-restaurants": {
+      "type": "application",
+      "root": "apps/api-restaurants",
+      "entryFile": "main",
+      "sourceRoot": "apps/api-restaurants/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api-restaurants/tsconfig.app.json"
+      }
+    },
+    "restaurant": {
+      "type": "application",
+      "root": "apps/restaurant",
+      "entryFile": "main",
+      "sourceRoot": "apps/restaurant/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/restaurant/tsconfig.app.json"
+      }
     }
   }
 }

@@ -12,10 +12,10 @@ export class ErrorType {
 
 @ObjectType()
 export class RegisterResponse {
-    @Field(() => User, { nullable: true })
-    user?: User | any
-    // @Field()
-    // activation_token: string;
+    // @Field(() => User, { nullable: true })
+    // user?: User | any
+    @Field()
+    activation_token: string;
 
     @Field(() => ErrorType, { nullable: true })
     error?: ErrorType;
@@ -27,11 +27,44 @@ export class LoginResponse {
     @Field(() => User, { nullable: true })
     user?: User | unknown;
 
-    // @Field({ nullable: true })
-    // accessToken?: string;
+    @Field({ nullable: true })
+    accessToken?: string;
 
-    // @Field({ nullable: true })
-    // refreshToken?: string;
+    @Field({ nullable: true })
+    refreshToken?: string;
+
+    @Field(() => ErrorType, { nullable: true })
+    error?: ErrorType;
+}
+
+@ObjectType()
+export class ActivationResponse {
+    @Field(() => User)
+    user: User | unknown;
+
+    @Field(() => ErrorType, { nullable: true })
+    error?: ErrorType;
+}
+
+@ObjectType()
+export class LogoutResponse {
+    @Field()
+    message?: string;
+}
+
+@ObjectType()
+export class ForgotPasswordResponse {
+    @Field()
+    message: string;
+
+    @Field(() => ErrorType, { nullable: true })
+    error?: ErrorType;
+}
+
+@ObjectType()
+export class ResetPasswordResponse {
+    @Field(() => User)
+    user: User | unknown;
 
     @Field(() => ErrorType, { nullable: true })
     error?: ErrorType;
